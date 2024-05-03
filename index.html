@@ -9,11 +9,17 @@
 <style>
     .price-up { color: green; }
     .price-down { color: red; }
+    .total-mcap { font-size: 1.5rem; font-weight: bold; }
+    .footer { margin-bottom: 20px; font-size: 1.2rem; }
 </style>
 </head>
 <body>
 <div class="container">
     <h1 class="mb-4">NationFi Memecoins <small class="float-end">by <a href="https://x.com/thenouner">The Nouner</a></small></h1>
+    <div class="footer">
+        "Olympics is coming"
+    </div>
+    <div class="total-mcap">Total Market Cap: $<span id="totalMcap">0</span></div>
     <table class="table">
         <thead>
             <tr>
@@ -29,6 +35,7 @@
             <!-- Memecoins data will be inserted here -->
         </tbody>
     </table>
+   
 </div>
 
 <script>
@@ -43,6 +50,7 @@ async function fetchAndDisplayCoinData(coinAddress) {
         const coinData = data.pairs[0];
         coinsData.push(coinData);
         updateTable();
+        updateTotalMcap();
     } catch (error) {
         console.error('Failed to fetch data:', error);
     }
@@ -82,6 +90,11 @@ function updateTable() {
     });
 }
 
+function updateTotalMcap() {
+    const totalMcap = coinsData.reduce((acc, coin) => acc + coin.fdv, 0);
+    document.getElementById('totalMcap').textContent = totalMcap.toLocaleString();
+}
+
 async function displayCoins() {
     const addresses = [
         '69kdRLyP5DTRkpHraaSZAQbWmAwzF9guKjZfzMXzcbAs', '2A2AzWAw9GEJ9tXoe6gft4jC2RL6LFzbj6DPsbmhjZ2m', 'HhAcs9JjcveM45FG2Zi3JcWAomra3QezZ22mVvr7zPSE', 'Ehk7QXFVqHkyqSpcfmUTCm5mJ9wE5b2axkC6Emcv7Qh1',
@@ -90,7 +103,7 @@ async function displayCoins() {
         'Eb6AGbkhow75fgJshgZEpZN1S3P11GdQRXEWX7pvzka3', '2GEwopJhqVu7ZpzpjSQa2E5pSDyGhJADGRcnzWaaD9EG', 'GuVoE2qAS3DHaAGSeuZfBkbLjFXfP46DFbogbrVJNHfN', '6tWuipcDv4CiHtXid7JctDbtLLA1VdkTwSDupK6UxzJL',
         'EiMLSYbsZiBrtbfb9axqcGU83tDz1SoVh8YYTyjMSPYR', 'Z83FZhr44ks3iQyJs4GEFRuq2fy82H2ha6wtUtpRqSF', '5NkV6XmTix99VkifTCDJR4MnmKaCFvfUb9g4u4Lq91Uu', '9XRpjZjhJPeWtUymiEWn3FW7uAnMeQca14ucTWWWyP2g', 
         'GPJRKb25amJfG1by8WwdMqCT525iZku4fgaFBYAouvin', 'AHfWYdXqcMVkcqpXjsxDSddfLUcgFEu8bVYzCAX9DhFy', 'D6MhCCin6UaHGq3fJZgK7NWZH9bmWvmJ3Bgmsp9t7QQZ', '6jML6Q2pQD3jPQbsvJmdzRwGta7gWguB4evtgdG9GAtf',
-        'BT2apS5umybEthwy6xP5PfgNDw3ykMyxirY5XxZ7H654'
+        'BT2apS5umybEthwy6xP5PfgNDw3ykMyxirY5XxZ7H654', 'H6nFaW1Y4S2ZPZ3NjfZ39byM85RitpQsx5hvuBoJpHNj'
     ];
 
     for (let address of addresses) {

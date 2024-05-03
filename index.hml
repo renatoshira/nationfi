@@ -89,7 +89,7 @@ async function displayCoins() {
         '2aKb8XmBMthbWNAT5R24Fjw6ENBKEZjNuPFw4hh7Z37W', '52DfsNknorxogkjqecCTT3Vk2pUwZ3eMnsYKVm4z3yWy', 'F9mv7XXbrXZb1sP2JUoswbCB3WHQM4QGMFDTVfnRZMnP', '8uz7r3yQq8xnwBfWCoQGAftyYKgUz8wMQWod884nerf4',
         'Eb6AGbkhow75fgJshgZEpZN1S3P11GdQRXEWX7pvzka3', '2GEwopJhqVu7ZpzpjSQa2E5pSDyGhJADGRcnzWaaD9EG', 'GuVoE2qAS3DHaAGSeuZfBkbLjFXfP46DFbogbrVJNHfN', '6tWuipcDv4CiHtXid7JctDbtLLA1VdkTwSDupK6UxzJL',
         'EiMLSYbsZiBrtbfb9axqcGU83tDz1SoVh8YYTyjMSPYR', 'Z83FZhr44ks3iQyJs4GEFRuq2fy82H2ha6wtUtpRqSF', '5NkV6XmTix99VkifTCDJR4MnmKaCFvfUb9g4u4Lq91Uu', '9XRpjZjhJPeWtUymiEWn3FW7uAnMeQca14ucTWWWyP2g', 
-        'GPJRKb25amJfG1by8WwdMqCT525iZku4fgaFBYAouvin', 'AHfWYdXqcMVkcqpXjsxDSddfLUcgFEu8bVYzCAX9DhFy', 'D6MhCCin6UaHGq3fJZgK7NWZH9bmWvmJ3Bgmsp9t7QQZ'
+        'GPJRKb25amJfG1by8WwdMqCT525iZku4fgaFBYAouvin', 'AHfWYdXqcMVkcqpXjsxDSddfLUcgFEu8bVYzCAX9DhFy', 'D6MhCCin6UaHGq3fJZgK7NWZH9bmWvmJ3Bgmsp9t7QQZ', '6jML6Q2pQD3jPQbsvJmdzRwGta7gWguB4evtgdG9GAtf'
     ];
 
     for (let address of addresses) {
